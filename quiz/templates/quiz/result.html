@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 border-0 shadow-lg rounded-4 text-center" style="background: rgba(255, 255, 255, 0.9);">
+                <h1 class="text-primary fw-bold mb-4">🎉 Test yakunlandi!</h1>
+                <div class="display-4 fw-bold text-dark mb-3">{{ score }} <span class="fs-4 text-muted">/ {{ total }}</span></div>
+                <div class="progress mb-4" style="height: 20px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: {{ score|divisibleby:total|yesno:'100,50' }}%;"></div>
+                </div>
+                <p class="fs-5">Darajangiz: <span class="badge bg-warning text-dark px-3">{{ user.profile.level }}</span></p>
+                <div class="d-grid gap-2 mt-4">
+                    <a href="{% url 'index' %}" class="btn btn-outline-primary btn-lg rounded-pill">🏠 Bosh sahifa</a> <br><br>
+                    <a href="{% url 'leaderboard' %}" class="btn btn-success btn-lg rounded-pill">📊 Reytingni ko'rish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

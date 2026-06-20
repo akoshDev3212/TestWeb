@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4"><i class="bi bi-trophy-fill text-warning"></i> 🏆 Reyting jadvali</h2>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle shadow-sm bg-white rounded-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Foydalanuvchi</th>
+                    <th>Darajasi</th>
+                    <th>Umumiy ball</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in profiles %}
+                <tr class="{% if forloop.counter <= 3 %}table-active fw-bold{% endif %}">
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ p.user.username }}</td>
+                    <td><span class="badge rounded-pill {% if p.level == 'Senior' %}bg-danger{% else %}bg-info{% endif %}">{{ p.level }}</span></td>
+                    <td><span class="badge bg-dark">{{ p.total_score }}</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Professional Test Tizimi</title>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">EduQuiz</a>
+        <div class="d-flex">
+            {% if user.is_authenticated %}
+                <span class="text-white me-3">Salom, <strong>{{ user.username }}</strong>! (Daraja: {{ user.profile.level }})</span>
+                <a href="{% url 'logout' %}" class="btn btn-outline-danger btn-sm">Chiqish</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm me-2">Kirish</a>
+                <a href="{% url 'signup' %}" class="btn btn-success btn-sm">Ro'yxatdan o'tish</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">Bilimingizni sinab ko'ring!</h1>
+        <p class="lead">O'zingizga mos fanni tanlang va reytingda yuqori o'rinlarni egallang.</p>
+    </div>
+
+    <!-- Fanlar ro'yxati -->
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3>HTML</h3>
+                <a href="{% url 'test_view' 'HTML' %}" class="btn btn-warning w-100">Testni boshlash</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3>CSS</h3>
+                <a href="{% url 'test_view' 'CSS' %}" class="btn btn-primary w-100">Testni boshlash</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3>JavaScript</h3>
+                <a href="{% url 'test_view' 'JS' %}" class="btn btn-success w-100">Testni boshlash</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reyting va Statistika -->
+    <div class="mt-5 text-center">
+        <a href="{% url 'leaderboard' %}" class="btn btn-info btn-lg">🏆 Reyting jadvalini ko'rish</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Virtual muhit
+venv/
+env/
+.env
+
+# Python keshi
+__pycache__/
+*.py[cod]
+
+# Ma'lumotlar bazasi (Production'da postgres ishlatamiz)
+db.sqlite3
+db.sqlite3-journal
+
+# Media va statik fayllar (Serverda generatsiya qilinadi)
+staticfiles/
+media/
+
+# IDE fayllari
+.vscode/
+.idea/
+
+# Muhim ma'lumotlar (SECRET_KEY ni bu yerda saqlamang!)
+.env
