@@ -27,7 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['https://TestWeb.onrender.com/', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'testweb-1iue.onrender.com',  # Renderdagi havolangiz
+    '127.0.0.1', 
+    'localhost'
+]
 
 
 # Application definition
